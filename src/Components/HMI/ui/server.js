@@ -344,6 +344,11 @@ app.get("/login", (req, res) => {
   res.sendFile(path.join(__dirname, 'public/login.html'));
 })
 
+app.get("/user_profile", (req, res) => {
+  [verifyToken]
+  res.sendFile(path.join(__dirname, 'public/user_profile.html'));
+})
+
 
 app.get("*", (req, res) => {
   if (authJwt.verifyToken) {

@@ -24,6 +24,7 @@ exports.verifyToken = (req, res, next) => {
         });
       }
       req.userId = decoded.id;
+      console.log(req.username);
       next();
       return true;
     });
