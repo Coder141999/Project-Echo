@@ -106,5 +106,71 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Find the "Update Password" button by its ID
+            const updatePasswordBtn = document.getElementById("updatePasswordBtn");
+    
+            // Add a click event listener to the button
+            updatePasswordBtn.addEventListener("click", function (event) {
+                event.preventDefault(); // Prevent the default form submission behavior
+    
+                // Prompt the user for the new password
+                const newPassword = prompt("Enter your new password:");
+                if (newPassword === null) {
+                    // User canceled the prompt, do nothing
+                    return;
+                }
+    
+                // Prompt the user to confirm the new password
+                const confirmPassword = prompt("Confirm your new password:");
+                if (confirmPassword === null) {
+                    // User canceled the confirmation prompt, do nothing
+                    return;
+                }
+    
+                // Check if the passwords match
+                if (newPassword !== confirmPassword) {
+                    // Passwords do not match, show an error message
+                    alert("Passwords do not match. Please try again.");
+                    return;
+                }
+
+                if (newPassword == confirmPassword) {
+                    // Passwords do not match, show an error message
+                    alert("Password Has been changed successfully !!!");
+
+                    // Make an AJAX request to your server to update the password
+                fetch('/updatePassword', {
+                    method: 'POST', // You should use the appropriate HTTP method
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ newPassword }), // Send the new password to the server
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        // Handle the response from the server, e.g., show a success message or error message
+                        if (data.success) {
+                            alert("Password updated successfully!");
+                        } else {
+                            alert("Password update failed. Please try again later.");
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
+                    return;
+                }
+    
+                
+            });
+
+            
+        });
+
+        
+    </script>
+    
 </body>
 </html>
