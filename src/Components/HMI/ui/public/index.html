@@ -110,7 +110,18 @@
             <a id="FAQ-menu-btn" class="tabs-button" onclick="openTab('FAQ')"></a>
             <a id="donate-menu-btn" class="tabs-button" onclick="openTab('donate')"></a>
             <a id="services-menu-btn" class="tabs-button" onclick="openTab('services')"></a> <!-- New tab -->
+            <a id="user-profile-button" class="tabs-button" onclick="openTab('userProfile')"></a>
             <span style="position: fixed; border-top: 6px solid rgba(247, 186, 206, 0.8); height: 2px; width: 440; margin-top: 36px;"></span>
+          </div>
+          <div id="userProfile">
+            <div class="wrapper">
+              <div id="userProfile-contents">
+                <h2>User Profile</h2>
+                    <p>
+                      
+                    </p>
+              </div>
+            </div>
           </div>
           <div id="services">
             <div class="wrapper">
@@ -754,6 +765,9 @@
         break;
       case "services":
         document.getElementById("services-menu-btn").classList.add("active");
+        break;
+      case "userProfile":
+        document.getElementById("user-profile-button").classList.add("active");
         break;
     }
     if (tab != null){
