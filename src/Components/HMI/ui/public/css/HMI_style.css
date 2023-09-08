@@ -562,11 +562,17 @@ input[type="checkbox"]{
 }
 
 #userProfile-contents button{
+  color: #e48595;
   background:#fff !important;
+  font-weight: 400;
   border: none;
+  padding: 10px;
+  margin-top: 50px;
+  border-radius: 6px;
 }
 
 #userProfile-contents button:hover{
+  transition: .5s;
   color: #fff;
   background: #e48595 !important;
 }
