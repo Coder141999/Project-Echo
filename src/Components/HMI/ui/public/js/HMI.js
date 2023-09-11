@@ -766,7 +766,7 @@ function addMicrophonesByLayer(hmiState, layerName, iconPath){
       image: new ol.style.Icon({
         src: iconPath,
         anchor: [0.5, 1],
-        scale: 0.75,
+        scale: 0.12,
       }),
     });
     mic.setStyle(icon);
